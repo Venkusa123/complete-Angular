@@ -1,0 +1,22 @@
+<p>first works!</p>
+<h1>i am from first component</h1>
+<button class="btn-md btn-primary" (click)="method()">Click Me</button>
+<div class="container">
+    <div class="class1">
+        I am from class 1 and i would like to contribute to do anything required for the love and sacrifice and grace of lord sai who is visibe form of lord shiva
+    </div>
+    <div class="class2">
+        I am from class2.i have my priorities to do wat ever i wanted to do in this time
+    </div>
+</div>
+<div>
+    <form #f1='ngForm'>
+        <input type="text" name="name" [(ngModel)]="name" #namef='ngModel'>
+    </form>
+</div>
+<div>
+    {{name | uppercase}}
+</div>
+<div directive1 style="margin-top: 5%;">
+    {{name | uppercasepipe:18765:2098765:3098765}}
+</div>

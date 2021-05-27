@@ -1,0 +1,23 @@
+button[class="btn-md btn-primary"]:hover{
+    background-color: yellow;
+    color: brown;
+}
+.class1{
+    width: 130px;
+    height: 140px;
+    background-color: burlywood;
+    color: blue;
+    
+}
+.class2{
+    width: 130px;
+    height: 140px;
+    background-color: brown;
+    color: hsl(60, 100%, 100%);
+}
+.class1:hover{
+    opacity: 0.5;
+}
+.class2:hover{
+    opacity: 0.5;
+}

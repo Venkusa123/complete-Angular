@@ -1,0 +1,53 @@
+<p>third works!</p>
+<h1>
+    Registration Form with Template Driven Forms
+</h1>
+<div>
+    <form #f1="ngForm" (ngSubmit)="registered(f1)">
+        <div class="form-group">
+            <label for="nameid">Name</label>
+            <input type="text" name="name"  class="form-control" placeholder="Enter First name" #name1="ngModel" [(ngModel)]="firstName" id="nameid">
+            <span *ngIf="(name1.invalid && (name1.touched || name1.dirty || templateFormSubmitted))">Please enter First Name</span>
+        </div>
+        <div class="form-group">
+            <label for="lnameid">Last Name</label>
+            <input class="form-control" type="text" name="lname" id="lnameid" required #lname="ngModel" [(ngModel)]="lastName" placeholder="Enter Last Name">
+            <span *ngIf="(lname.invalid && (lname.touched || lname.dirty || templateFormSubmitted))">Please enter Last Name in the lastname Field</span>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<h1>Learn javascript Reduce Method</h1>
+<pre>let array=[13,14,1,5,16,17];<br>
+<!-- array.reduce((acc,item)=>{
+    return [...acc,item>10]//13,14,16,17
+},[])</pre> -->
+<pre>1st param is the accumulator which is a call back after every iteration.
+    2nd param is the item whih comes for the every iteration fromm araray and initilaizer for the first.
+</pre>
+
+<div>
+    <button class="btn btn-md btn-primary" id="countriesBtn" (click)="getCountries()">Get Countries</button>
+</div>
+<br>
+<div>
+    <button class="btn btn-md btn-secondary" id="countriesBtn" (click)="getFilter()">filter</button>
+</div>
+<br>
+<div>
+    <button class="btn btn-md btn-danger" id="countriesBtn" (click)="getReduceditems()">Reduce</button>
+</div>
+<br>
+<div>
+    <button class="btn btn-md btn-danger" id="countriesBtn" (click)="getReduceditems1()">Reduce1</button>
+</div>
+<div>
+    <button class="btn btn-md btn-primary" id="countriesBtn" (click)="getReduceditems2()">Reduce1</button>
+</div>
+<div>
+    <button class="btn btn-md btn-primary" id="countriesBtn" (click)="delReduceditems2()">Delete Reduce</button>
+</div>
+<div>
+    <button class="btn btn-md btn-primary" id="countriesBtn" (click)="filetred()">Filtered</button>
+</div>

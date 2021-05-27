@@ -1,0 +1,34 @@
+<h1 class="secondh1">Second Component starts executing this page</h1>
+<div class="container">
+    <form [formGroup]="secondForm">
+        <div class="form-group">
+            <label for="nameid">Second Name</label>
+            <input type="text" name="name" id="nameid" class="form-control" formControlName="name"> 
+            <span *ngIf="(secondForm.controls.name.invalid && (secondForm.get('name').touched || secondForm.get('name').dirty || secondMaintain))">Enter correct</span>
+        </div>
+        <div class="form-group">
+            <label for="sectionid">Second Section</label>
+            <input type="text" name="section" id="sectionid" class="form-control" formControlName="section">
+            <span *ngIf="(secondForm.controls.section.invalid && (secondForm.controls.section.touched || secondForm.get('section').dirty || secondMaintain))">Enter Section</span>
+        </div>
+        <div class="form-group">
+            <label for="subjectId">Subject</label>
+            <select name="subjectName" class="form-control" formControlName="subjectName" id="subjectId" (change)="subjectSelcted($event.target.value)">
+                <option value="" selected>Select</option>
+                <option value="{{k.lId}}" *ngFor="let k of subject">{{k.lidvalue}}</option>
+            </select>+
+        </div>
+        <div>
+            <button class="btn btn-md btn-submit" (click)="secondFormSubmitted()">Submit</button>
+        </div>
+        <div>
+            <button class="btn-md btn-primary" (click)="setDefaultValue()">Set Default Value</button>
+        </div>
+    </form>
+</div>
+<a (click)="navigateToChild()">click here to navigate to child2.</a>
+<div>
+    <button class="btn btn-md btn-primary" (click)="getCountries()">
+        Countries
+    </button>
+</div>
