@@ -5,7 +5,7 @@ import { SecondComponent } from "./second/second.component";
 
 const approutes:Routes=[
    {
-        path:'',
+        path:'abc',
         component:SecondComponent,
                 children:[{
                     path:'child',
@@ -16,7 +16,11 @@ const approutes:Routes=[
     {
         path:'child1',
         component:Child2Component
-    }
+    },
+    {
+        path:'',
+        component:SecondComponent
+    },
 ]
 
 @NgModule({

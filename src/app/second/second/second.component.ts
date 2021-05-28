@@ -17,7 +17,8 @@ export class SecondComponent implements OnInit {
   @Input('firstVar') firstVar;
   @Input('secondVar') secondVar;
   @Output() sdata=new EventEmitter;
-  constructor(private fb:FormBuilder,private activatedRoute:ActivatedRoute,private appservice:AppService,private router:Router) { }
+  constructor(private fb:FormBuilder,private activatedRoute:ActivatedRoute,private appservice:AppService,private router:Router) { 
+  }
   secondForm:FormGroup;
   secondMaintain:boolean=false;
   changedName:any='';
@@ -27,6 +28,9 @@ export class SecondComponent implements OnInit {
     {'lId':'Kannada','lidvalue':'kannada'},
   ]
   ngOnInit() {
+    this.activatedRoute.params.subscribe(item=>{
+      console.log(item.id);
+    })
     console.log(this.firstVar);
     console.log(this.secondVar);   
     this.secondForm = this.fb.group({
@@ -76,5 +80,8 @@ export class SecondComponent implements OnInit {
   }
   navigateToChild(){
     this.router.navigateByUrl('second/child1');
+  }
+  navigateToChild1(){
+    this.router.navigateByUrl('second/abc/child');
   }
 }

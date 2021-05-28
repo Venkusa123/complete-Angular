@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+.formDiv{
+    width: 40vw;
+    margin-left: 29%
+}
+.errorClass{
+    color: red;
+}
+.btnsDiv{
+    display: flex;
+    flex-direction: row;
+    margin-top: 4%;
+}
+.resetDiv{
+    margin-left: 4%;
+}
+.borderRed{
+    border: 2px solid red;
+}

@@ -13,7 +13,7 @@ export class ThirdComponent implements OnInit {
   constructor(private thirdService:ThirdService) { }
   templateFormSubmitted:boolean=false;
   newarray=[];
-  numbers = [-5, 6, 2, 0,];
+  numbers = [4,-5, 6, 2, 0,];
   doubledPositiveNumbers:any=[];
   ngOnInit() {
     this.doubledPositiveNumbers = this.numbers.reduce((accumulator, currentValue) => {

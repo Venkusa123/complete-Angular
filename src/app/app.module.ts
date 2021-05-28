@@ -7,11 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { ThirdComponent } from './third/third/third.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { AppService } from './app.service';
 import { SecondModule } from './second/second.module';
 import { UppercasePipe } from './pipes/custom-pipe1';
 import { Directive1 } from './custome-directives/directive1';
+import { ThirdService } from './third/third/third.service';
+import { BusModule } from './bus-app/bus.module';
+import { LoadingInterceptorService } from './loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,9 +24,10 @@ import { Directive1 } from './custome-directives/directive1';
     NotFoundComponent,UppercasePipe,Directive1
   ],
   imports: [
-    BrowserModule,AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,SecondModule
+    BrowserModule,AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,SecondModule,BusModule
   ],
-  providers: [AppService,UppercasePipe,Directive1],
+  providers: [AppService,UppercasePipe,Directive1,ThirdService,
+  {provide: HTTP_INTERCEPTORS,useClass: LoadingInterceptorService,multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

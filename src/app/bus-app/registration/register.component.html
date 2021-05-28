@@ -1,0 +1,45 @@
+<div>
+    <p>Hi am from paragraph</p>
+    <h1>Welecome to APSRTC Bus Registration Services</h1>
+        <form class="formDiv" [formGroup]="busReservationForm">
+            <div class="form-group">
+                <label for="fromId">From Station</label>
+                <input type="text" name="from" formControlName="fromStn" id="fromId" class="form-control" placeholder = "Enter From Station" 
+                [ngClass]="{'borderRed':busReservationForm.controls.fromStn.invalid && (busReservationForm.controls.fromStn.touched || busReservationForm.controls.fromStn.dirty)}">
+                <span *ngIf="busReservationForm.controls.fromStn.invalid && (busReservationForm.controls.fromStn.touched || busReservationForm.controls.fromStn.dirty)" class="errorClass">
+                    <span *ngIf="busReservationForm.get('fromStn').errors.required">Please Enter From Station</span>
+                    <span *ngIf="busReservationForm.controls.fromStn.errors.minlength">minLength is 5</span>
+                    <span *ngIf="busReservationForm.controls.fromStn.errors.maxlength">maxLength is 8</span>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="toId">To Station</label>
+                <input type="text" name="to" formControlName="toStn" placeholder = "Enter to Station" class="form-control" id="toId"
+                [ngClass]="{'borderRed':busReservationForm.controls.toStn.invalid && (busReservationForm.controls.toStn.touched || busReservationForm.controls.toStn.dirty)}">
+                <span *ngIf="busReservationForm.controls.toStn.invalid && (busReservationForm.controls.toStn.touched || busReservationForm.controls.toStn.dirty)" class="errorClass">
+                    Pleaes Enter To Station
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="seatId">Select Seat</label>
+                <select name="seat" id="seatId" class="form-control">
+                    <option value="{{k}}" *ngFor="let k of seatNumbers">{{k}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="emailId">Email</label>
+                <input type="text" name="email" formControlName="emailDomain1" class="form-control" id="emailId">
+                <span *ngIf="busReservationForm.controls.emailDomain1.invalid && (busReservationForm.controls.emailDomain1.touched || busReservationForm.controls.emailDomain1.dirty)" class="errorClass">
+                    <span *ngIf="busReservationForm.controls.emailDomain1.errors">Email Domain should have @gmail.com </span>
+                </span>
+            </div>
+            <div class="btnsDiv">
+                <div class="form-group">
+                    <button class="bt-md btn-secondary" (click)="reservation()">Registration</button>
+                </div>
+                <div class="resetDiv">
+                    <button class="btn-md btn-primary" (click)="resetForm()">Reset Form</button>
+                </div>
+            </div>
+        </form>
+</div>

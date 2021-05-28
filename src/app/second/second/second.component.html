@@ -16,7 +16,7 @@
             <select name="subjectName" class="form-control" formControlName="subjectName" id="subjectId" (change)="subjectSelcted($event.target.value)">
                 <option value="" selected>Select</option>
                 <option value="{{k.lId}}" *ngFor="let k of subject">{{k.lidvalue}}</option>
-            </select>+
+            </select>
         </div>
         <div>
             <button class="btn btn-md btn-submit" (click)="secondFormSubmitted()">Submit</button>
@@ -26,9 +26,11 @@
         </div>
     </form>
 </div>
-<a (click)="navigateToChild()">click here to navigate to child2.</a>
+<a id="alink1" (click)="navigateToChild()">click here to navigate to child2.</a><br>
+<a id="alink2" (click)="navigateToChild1()">click here to navigate to child1 in the same component.</a>
 <div>
     <button class="btn btn-md btn-primary" (click)="getCountries()">
         Countries
     </button>
 </div>
+<router-outlet></router-outlet>

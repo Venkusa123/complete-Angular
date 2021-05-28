@@ -1,15 +1,17 @@
 import { getLocaleFirstDayOfWeek } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { from, of } from 'rxjs';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-first',
   templateUrl: './first.component.html',
-  styleUrls: ['./first.component.scss']
+  styleUrls: ['./first.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class FirstComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appService:AppService) { }
    
   people=[{id:'1201',name:'charan',department:'IT'},
   {id:'1202',name:'chiyann',department:'IT'},
@@ -69,5 +71,11 @@ filteredArray:any=[];
      if(item === 'fifth element')
      console.log(item);
     }) 
+  }
+  getCountryByName():any{
+    this.appService.getCountryNames().subscribe(item=>{
+      console.log(item);
+      
+    })
   }
 }
