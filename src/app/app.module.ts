@@ -15,6 +15,8 @@ import { Directive1 } from './custome-directives/directive1';
 import { ThirdService } from './third/third/third.service';
 import { BusModule } from './bus-app/bus.module';
 import { LoadingInterceptorService } from './loading.interceptor';
+import { RouterModule } from '@angular/router';
+import { AuthGuardComponent } from './auth.guards';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,9 @@ import { LoadingInterceptorService } from './loading.interceptor';
     NotFoundComponent,UppercasePipe,Directive1
   ],
   imports: [
-    BrowserModule,AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,SecondModule,BusModule
+    BrowserModule,AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,SecondModule,BusModule,RouterModule
   ],
-  providers: [AppService,UppercasePipe,Directive1,ThirdService,
+  providers: [AppService,UppercasePipe,Directive1,ThirdService,AuthGuardComponent,
   {provide: HTTP_INTERCEPTORS,useClass: LoadingInterceptorService,multi: true}],
   bootstrap: [AppComponent]
 })

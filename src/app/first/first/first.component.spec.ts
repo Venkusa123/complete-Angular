@@ -1,4 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { AppService } from 'src/app/app.service';
+import { UppercasePipe } from 'src/app/pipes/custom-pipe1';
 
 import { FirstComponent } from './first.component';
 
@@ -8,7 +12,9 @@ describe('FirstComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FirstComponent ]
+      imports: [HttpClientModule,RouterModule],
+      declarations: [ FirstComponent,UppercasePipe ],
+      providers:[AppService]
     })
     .compileComponents();
   }));

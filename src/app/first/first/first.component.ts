@@ -1,5 +1,6 @@
 import { getLocaleFirstDayOfWeek } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { from, of } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 
@@ -11,7 +12,7 @@ import { AppService } from 'src/app/app.service';
 })
 export class FirstComponent implements OnInit {
 
-  constructor(private appService:AppService) { }
+  constructor(private appService:AppService,private acivatedRoute:ActivatedRoute) { }
    
   people=[{id:'1201',name:'charan',department:'IT'},
   {id:'1202',name:'chiyann',department:'IT'},
@@ -54,7 +55,10 @@ impArray:any=[];
     
     console.log("from person result");
     console.log(this.peopleResult);
-    
+    this.acivatedRoute.params.subscribe((item)=>{
+      console.log(item.id1);
+      
+    })
   }
 
 

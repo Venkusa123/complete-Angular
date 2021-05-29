@@ -18,6 +18,18 @@
     </form>
 </div>
 
+<form #f11='ngForm' (ngSubmit)="submitted(f11)">
+    <div class="form-group">
+        <label>Ename</label>
+        <input type="text" name="ename" [(ngModel)]="empName" required minlength="6" #empNamee="ngModel" class="form-control" >
+        <span *ngIf="(empNamee.invalid && (empNamee.touched || empNamee.dirty))">error show</span>
+    </div>
+    <div class="form-group">
+        <label for="empid">EMployee ID</label>
+        <input type="text" name="empi" [(ngModel)]="empId" #empId1="ngModel" class="form-control" id="empid">
+    </div>
+    <button class="btn btn-primary">Submit</button>
+</form>
 <h1>Learn javascript Reduce Method</h1>`
 <pre>let array=[13,14,1,5,16,17];<br>
 <!-- array.reduce((acc,item)=>{

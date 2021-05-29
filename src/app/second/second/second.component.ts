@@ -72,11 +72,10 @@ export class SecondComponent implements OnInit {
     })
   }
   getCountries(){
-    forkJoin(this.appservice.getCountryNames(),this.appservice.getCountries()).pipe(
-      map((data)=>{
-        console.log(data);
-      })
-    )
+    this.appservice.allowToFirst = true;
+    forkJoin(this.appservice.getCountryNames(),this.appservice.getCountries()).subscribe(item=>{
+      console.log(item);
+    })
   }
   navigateToChild(){
     this.router.navigateByUrl('second/child1');

@@ -14,6 +14,8 @@ export class ThirdComponent implements OnInit {
   templateFormSubmitted:boolean=false;
   newarray=[];
   numbers = [4,-5, 6, 2, 0,];
+  empId:any='';
+  empName:any="";
   doubledPositiveNumbers:any=[];
   ngOnInit() {
     this.doubledPositiveNumbers = this.numbers.reduce((accumulator, currentValue) => {
@@ -101,5 +103,11 @@ export class ThirdComponent implements OnInit {
      this.k.set(item.id,item);
     })
     console.log(this.k.values());
+  }
+  submitted(f11:NgForm){
+    console.log(f11);
+    if(this.empId !="" || this.empName != ""){
+      console.log("FOrm is valid");
+    }
   }
 }

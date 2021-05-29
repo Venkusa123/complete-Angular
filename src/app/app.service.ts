@@ -4,6 +4,7 @@ import { Injectable } from "@angular/core";
 @Injectable()
 
 export class AppService{
+    allowToFirst:boolean=false;
     constructor(private http:HttpClient){}
 
     getCountries(){

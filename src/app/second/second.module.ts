@@ -4,6 +4,7 @@ import { SecondComponent } from './second/second.component';
 import { SecondWrapperModule } from './second-wrapper.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common';
     SecondComponent
   ],
   imports: [
-    CommonModule,SecondWrapperModule,FormsModule,ReactiveFormsModule
+    CommonModule,SecondWrapperModule,FormsModule,ReactiveFormsModule,RouterModule
   ]
 })
 export class SecondModule { }
