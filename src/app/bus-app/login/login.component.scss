@@ -1,0 +1,24 @@
+.lHeading{
+    color: red;
+    padding-left: 100px;
+}
+.mainContainer{
+    width: 100vw;   
+    padding-left: 100px;
+}
+.mainContainer .fgWidth{
+    width: 300px;
+    margin-left: 25%;
+    display: flex;
+    flex-direction: row;
+}
+.labelClass{
+    color: red;
+    width: 139px;
+    padding-top: 5px;
+}
+.spanClass{
+    position: absolute;
+    padding-left: 276px;
+    padding-top: 5px;
+}

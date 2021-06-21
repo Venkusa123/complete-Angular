@@ -1,7 +1,7 @@
-@import "../../../styles.scss";
+// @import "../../../styles.scss";
 .formDiv{
     width: 40vw;
-    margin-left: 29%
+    margin-left: 29%;
 }
 .errorClass{
     color: red;
@@ -16,4 +16,10 @@
 }
 .borderRed{
     border: 2px solid red;
+}
+:host ::ng-deep p{
+    color: red;
+}
+.c1{
+    margin-bottom: 4%;
 }

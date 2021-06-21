@@ -65,7 +65,7 @@ impArray:any=[];
 
   a=["charan",'how are you',123,678,'fifth element'];
   b={'id':12,'value':'charan'};
-  name:any=''
+  name:any='charan'
 filteredArray:any=[];
   method(){
     this.filteredArray = this.a.filter(item=>item==='how are you')

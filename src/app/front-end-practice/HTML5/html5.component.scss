@@ -1,0 +1,28 @@
+
+.firstDiv>p{
+    background-color: blue;
+}
+.firstDiv~p{
+    background-color: red;
+}
+.firstDiv+p{
+    background-color: yellow;
+}
+.cont1{
+    display: grid;
+    grid-template-areas: "first second";
+}
+.first{
+    grid-area: first;
+}
+.second{
+    grid-area: second;
+}
+.first:hover{
+    // transform: translate(0,100px);
+    transform: rotate(180deg);
+    transform: scale(-0.5);
+}
+.second:hover{
+    transform: skew(18deg,30deg);
+}

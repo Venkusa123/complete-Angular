@@ -8,8 +8,7 @@ import { ThirdComponent } from "./third/third/third.component";
 const routes:Routes=[
     {
         path: 'first/:id1',
-        component:FirstComponent,
-        canActivate:[AuthGuardComponent]
+        component:FirstComponent
     },
     {
         path:'second',
@@ -17,11 +16,20 @@ const routes:Routes=[
     },
     {
         path:'third',
+        canActivate:[AuthGuardComponent],
         component:ThirdComponent
     },
     {
         path:'bus',
         loadChildren:()=>import('./bus-app/bus.module').then(b=>b.BusModule)
+    },
+    {
+        path:'bootstrap',
+        loadChildren:()=>import('./bootstrap-practice/bootstrap.module').then(bs=>bs.BootstrapCssModule)
+    },
+    {
+        path:'front-end',
+        loadChildren:()=>import('./front-end-practice/frontend.module').then(fem=>fem.FrontEndModule)
     },
     {
         path:'',

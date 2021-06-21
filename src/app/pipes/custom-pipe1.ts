@@ -1,8 +1,7 @@
 import { ElementRef, Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-    name:'uppercasepipe',
-    pure:false
+    name:'uppercasepipe'
 })
 
 

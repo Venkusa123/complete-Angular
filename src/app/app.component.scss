@@ -6,10 +6,26 @@ li{
     display: flex;
     flex-direction: row;
     padding-right: 10px;
+    width: 20%;
+    height: 8%;
+    border: 2px solid currentColor;
+    background-color: red;
+    color: whitesmoke;
+    align-items: center;
+    justify-content: center;
 }
 a{
     text-decoration: none;
+    color: whitesmoke;
 }
-li:nth-child(1n+1)::before{
-    content: "|";
+a:hover{
+    text-decoration: none;
+    color: rgb(88, 88, 165);
 }
+// li:nth-child(n+1)::after{
+//     content: "|";
+// }
+
+// li:last-child::after{
+//     content:""
+// }

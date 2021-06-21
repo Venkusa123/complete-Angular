@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { AppService } from 'src/app/app.service';
-import {map} from 'rxjs/operators';
+import {map, mergeMap, switchMap} from 'rxjs/operators';
 @Component({
   selector: 'app-second',
   templateUrl: './second.component.html',
@@ -71,11 +71,32 @@ export class SecondComponent implements OnInit {
       section:''
     })
   }
+  name:any='';
   getCountries(){
     this.appservice.allowToFirst = true;
     forkJoin(this.appservice.getCountryNames(),this.appservice.getCountries()).subscribe(item=>{
       console.log(item);
     })
+    console.log("forkjoin is completed");
+    
+    //below is working 5n
+    // this.appservice.getCountries().pipe(map(names=>{
+    //     let name=names[0].name
+    //     return name
+    // })).subscribe(name=>console.log(name));
+    this.appservice.getCountries().pipe(map(names=>{
+          this.name=names[0].name
+          mergeMap(()=>this.appservice.getCountryNames())
+      })).subscribe(item=>{
+        console.log(item)
+      });
+    // switchMap(
+    //   (event)=>{
+    //     return this.appservice.getCountryNames()
+    //   }
+    // ).subscribe(item=>{
+    //   console.log(item);      
+    // })
   }
   navigateToChild(){
     this.router.navigateByUrl('second/child1');

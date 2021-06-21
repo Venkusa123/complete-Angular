@@ -1,0 +1,19 @@
+<div>
+<h1 class="lHeading">Welcome to login Bus Application</h1>
+<div class="mainContainer">
+    <form #loginForm="ngForm" (ngSubmit)="loginFormSubmit(loginForm)">
+        <div class="form-group fgWidth">
+            <label class="labelClass" for="loginId">Enter State</label>
+            <select name="" id="loginId" class="form-control">
+                <option *ngFor="let state of statesLists" value="{{state}}">{{state}}</option>
+            </select>
+            <span> 
+                <img src="../../../assets/images/search.svg" alt="">
+            </span>
+        </div>
+        <div>
+           
+        </div>
+    </form>
+</div>
+</div>

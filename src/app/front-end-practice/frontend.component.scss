@@ -1,0 +1,28 @@
+.busAnch{
+    color: white !important;
+}
+header{
+    color: rgb(216, 216, 187);
+    z-index: 2;
+}
+ul li .busAnch:hover{
+    color:blue !important;
+}
+::ng-deep .nav-link{
+    color: white !important;
+}
+ul li{
+    padding-left: 69px;
+}
+.ulClass{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    border: 3px solid red;
+    color: white;
+    padding: 10px;
+    list-style: none;
+}
+.liClass{
+    width:300px
+}

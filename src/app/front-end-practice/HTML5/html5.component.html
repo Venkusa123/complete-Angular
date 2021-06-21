@@ -1,0 +1,28 @@
+<header>HTML5 Practice Session</header>
+&copy;
+<div class="container-fluid cont1">
+    <div class="first">
+        <img src="../../../assets/images/css3 selectors-1st.PNG" alt="">
+    </div>
+    <div class="second">
+        <img src="../../../assets/images/css3 selectors-2nd.PNG" alt="">
+    </div>
+</div>
+<div class="firstDiv">
+    <p>paragraph inside the first div</p>
+    <p>paragraph inside the first div</p>
+    <p>paragraph inside the first div</p>
+    <div *ngIf="true else content">
+        checking the code
+    </div>
+    <ng-template #content>
+        ng-template's content.
+    </ng-template>
+    <p>paragraph inside the first div</p>
+    <p>paragraph inside the first div</p>
+</div>
+<p>paragraph after first div and outside of firstdiv</p>
+<p>paragraph after first div and outside of firstdiv</p>
+<p>paragraph after first div and outside of firstdiv</p>
+<p>paragraph after first div and outside of firstdiv</p>
+<button class="btn-md btn-primary" (click)="clickMe()">clickMe</button>

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,APP_INITIALIZER } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first/first.component';
@@ -17,19 +17,21 @@ import { BusModule } from './bus-app/bus.module';
 import { LoadingInterceptorService } from './loading.interceptor';
 import { RouterModule } from '@angular/router';
 import { AuthGuardComponent } from './auth.guards';
+import { ObservableComponent } from './observable-comp/observable.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
     ThirdComponent,
-    NotFoundComponent,UppercasePipe,Directive1
+    NotFoundComponent,UppercasePipe,Directive1,ObservableComponent
   ],
   imports: [
     BrowserModule,AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,SecondModule,BusModule,RouterModule
   ],
   providers: [AppService,UppercasePipe,Directive1,ThirdService,AuthGuardComponent,
-  {provide: HTTP_INTERCEPTORS,useClass: LoadingInterceptorService,multi: true}],
+  // {provide: HTTP_INTERCEPTORS,useClass: LoadingInterceptorService,multi: true}
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

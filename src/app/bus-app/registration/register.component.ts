@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from "@angular/forms";
 import { debounceTime, switchMap } from "rxjs/operators";
 import { AppService } from "src/app/app.service";
+import { ImpurePipeComponent } from "src/app/pipes/custom-pipe2";
 
 @Component({
     selector:'app-bus-register',
@@ -11,8 +12,12 @@ import { AppService } from "src/app/app.service";
 })
 
 export class BusRegistrationComponent implements OnInit{
+    birthDate =new Date();
+    textInSmall="this text is in small but by using uppercase it is converted into Uppercase letters";
+    textInUpper = "ALL ARE IN CAPITAL LETTERS.BUT WE ARE USING LOWERCASE PIPE SO ALL ARE CONVERTED INTO LOWERCASE FORMAT"
+    currency = 195;
     seatNumbers:any=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40];
-    busReservationForm:FormGroup;
+    busReservationForm:FormGroup;arr1=[];
     ngOnInit(){
         this.busReservationForm = this.fb.group({
             fromStn:["",[Validators.required,Validators.minLength(5),Validators.maxLength(8)]],
@@ -27,9 +32,18 @@ export class BusRegistrationComponent implements OnInit{
             ).subscribe(item=>{
             console.log(item);
         })
+        this.busReservationForm.controls.toStn.valueChanges.subscribe(item=>{
+            
+            console.log(this.impurePipeComponent.transform(item));
+            
+        })
     }
-    constructor(public fb:FormBuilder,private appService:AppService){
+    constructor(public fb:FormBuilder,private appService:AppService,private impurePipeComponent:ImpurePipeComponent){
 
+    }
+    keyUp(){
+        console.log("key");
+        
     }
     logKeyValuePairs(busReservationForm:FormGroup){
     console.log(Object.keys(busReservationForm.controls))

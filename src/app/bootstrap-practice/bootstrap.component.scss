@@ -1,0 +1,29 @@
+ ::ng-deep input[type="text"]{
+    border-top: none !important;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    z-index: 1;
+}
+.con1{
+    position: absolute;
+    background-color: blue;
+    color: white;
+}
+.container .searchImage{
+    z-index: 2;
+    margin-left: -1.37%;
+    // position: relative;
+}
+.container-fluid{
+    background-color: chocolate;
+    height: 100vh;
+}
+.div1{
+    // width: 50vw;
+    // height: 50vh;
+    background-color: chartreuse;
+    position:absolute;
+    top: 10px;
+    left: 10px;
+}

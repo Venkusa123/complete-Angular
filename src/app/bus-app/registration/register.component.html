@@ -1,5 +1,5 @@
 <div>
-    <p>Hi am from paragraph</p>
+    <p class="pid">Hi am from paragraph</p>
     <h1>Welecome to APSRTC Bus Registration Services</h1>
         <form class="formDiv" [formGroup]="busReservationForm">
             <div class="form-group">
@@ -14,11 +14,14 @@
             </div>
             <div class="form-group">
                 <label for="toId">To Station</label>
-                <input type="text" name="to" formControlName="toStn" placeholder = "Enter to Station" class="form-control" id="toId"
+                <input type="text" name="to" formControlName="toStn"  placeholder = "Enter to Station" class="form-control" id="toId" 
                 [ngClass]="{'borderRed':busReservationForm.controls.toStn.invalid && (busReservationForm.controls.toStn.touched || busReservationForm.controls.toStn.dirty)}">
                 <span *ngIf="busReservationForm.controls.toStn.invalid && (busReservationForm.controls.toStn.touched || busReservationForm.controls.toStn.dirty)" class="errorClass">
                     Pleaes Enter To Station
                 </span>
+                <!-- <select name="" id="" class="form-control">
+                    <option value="{{a}}"   *ngFor="let a of busReservationForm.controls.toStn.value | custPipe2">{{a}}</option>
+                </select> -->
             </div>
             <div class="form-group">
                 <label for="seatId">Select Seat</label>
@@ -42,4 +45,14 @@
                 </div>
             </div>
         </form>
+</div>
+<div class="container c1">
+Birthday 'full' date is:- {{birthDate | date:'full'}}<br>
+Birthday 'fullDate' date is:- {{birthDate | date:'fullDate'}} <br>
+Birthday 'shortDate' date is:- {{birthDate | date:'mm-dd/yyyy hh:mm:ss'}} <br>
+Birthday 'shortDate' date is:- {{birthDate | date:'short'}}<br>
+-------------------------------------------------------------------------<br>
+{{textInSmall | uppercase}}<br>
+-------------------------------------------------------------------------<br>
+{{textInUpper | lowercase}}
 </div>
